@@ -3,37 +3,58 @@ import { ProjectCard } from "./projectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/project-img4.png";
+import projImg5 from "../assets/img/project-img5.png";
+
+import {  GiftFill, Github, } from 'react-bootstrap-icons';
+
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
 
+  const gitIcon = <Github size={25}  alt="" />;
+  const webLink = <GiftFill size={25}  alt="" />;
   const projects = [
     {
       title: "Business Startup",
       description: "Design & Development",
+      about: " Welcome to a realm where beauty meets technology, where innovation embraces elegance behold our cosmetic website, meticulously designed and flawlessly powered by the brilliance of React. ",
       imgUrl: projImg1,
+      imgLink: webLink,
+      iconUrl: gitIcon
     },
     {
-      title: "Business Startup",
+      type : "web",
+      title: "Crypto app",
       description: "Design & Development",
       imgUrl: projImg2,
+      about: " Welcome to a revolutionary digital domain where finance meets cutting-edge technology, where innovation shapes the future behold our React-powered crypto website, your gateway to the captivating world of cryptocurrency.",
+      imgLink: webLink,
+      iconUrl: gitIcon
     },
     {
-      title: "Business Startup",
+      title: "A TODO application",
       description: "Design & Development",
       imgUrl: projImg3,
+      about: " Experience the transformative power of our React-infused Todo App as it empowers you to conquer your tasks with effortless efficiency, our website provides a dynamic and streamlined platform to manage your daily responsibilities.",
+      imgLink: webLink,
+      iconUrl: gitIcon
     },
     {
-      title: "Business Startup",
+      title: "Jumia.com Clone",
       description: "Design & Development",
-      imgUrl: projImg1,
+      imgUrl: projImg4,
+      about: " redesined the jumia website that looks exactly like the original with its functionalities (ONLY TO BE VIEWED ON WIDE SCREEN )",
+      imgLink: webLink,
+      iconUrl: gitIcon
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "Logo Designs",
+      description: "Design & critical thinking",
+      imgUrl: projImg5,
+      about: "Prepare to be captivated and inspired as i craft visually stunning and compelling logos that embody the very soul of your business."
     },
     {
       title: "Business Startup",
@@ -51,17 +72,17 @@ export const Projects = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__bounce": ""}>
                 <h2>Projects</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>Are you ready to witness the perfect blend of innovation, aesthetics, and cutting-edge technology? Look no further, for you have stumbled upon a true creative powerhouse, your go-to web developer and graphics designer extraordinaire!</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
-                      <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                      <Nav.Link eventKey="first">All</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                      <Nav.Link eventKey="second">Web Dev</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="third">Tab 3</Nav.Link>
+                      <Nav.Link eventKey="third">Designs/Logos</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
@@ -79,8 +100,19 @@ export const Projects = () => {
                         }
                       </Row>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="section">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                    <Tab.Pane eventKey="second">
+                    <Row>
+                        {
+                          projects.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project.type}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>

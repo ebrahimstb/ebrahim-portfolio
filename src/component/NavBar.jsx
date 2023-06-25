@@ -4,6 +4,8 @@ import logo from '../assets/img/logo.svg';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
+import { GiftFill, Github, Instagram, Linkedin, Twitter } from 'react-bootstrap-icons';
+
 import { HashLink } from 'react-router-hash-link';
 import {
   BrowserRouter as Router
@@ -50,9 +52,10 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="#"><img src={navIcon1} alt="" /></a>
-                <a href="#"><img src={navIcon2} alt="" /></a>
-                <a href="#"><img src={navIcon3} alt="" /></a>
+                <a href="https://www.linkedin.com/in/ibrahim-abdulazeez-6b5542188?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BEA8SH38ySLOIIIMaVXetVQ%3D%3D"><span className="img"><Linkedin size={15} alt="" /></span></a>
+                <a href="https://twitter.com/ebrahim_oat"><span className=".img"><Twitter size={15}  alt="" /></span></a>
+                <a href="https://github.com/ebrahimstb"><span className=".img"><Github size={15}  alt="" /></span></a>
+                <a href="https://instagram.com/ebrahim_oat"><span className=".img"><Instagram size={15}  alt="" /></span></a>
               </div>
               <HashLink to='#connect'>
                 <button className="vvd"><span>Let’s Connect</span></button>
