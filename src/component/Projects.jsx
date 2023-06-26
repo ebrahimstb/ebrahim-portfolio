@@ -5,17 +5,19 @@ import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.png";
 import projImg5 from "../assets/img/project-img5.png";
+import projImg6 from "../assets/img/project-img6.png";
 
-import {  GiftFill, Github, } from 'react-bootstrap-icons';
 
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import { BrowserChrome, Github } from "react-bootstrap-icons";
 
 export const Projects = () => {
 
   const gitIcon = <Github size={25}  alt="" />;
-  const webLink = <GiftFill size={25}  alt="" />;
+  const webLink = <BrowserChrome size={25}  alt="" />;
+  const logoWeb = <BrowserChrome size={25} alt="" />;
   const projects = [
     {
       title: "Business Startup",
@@ -54,12 +56,13 @@ export const Projects = () => {
       title: "Logo Designs",
       description: "Design & critical thinking",
       imgUrl: projImg5,
-      about: "Prepare to be captivated and inspired as i craft visually stunning and compelling logos that embody the very soul of your business."
+      about: "Prepare to be captivated and inspired as i craft visually stunning and compelling logos that embody the very soul of your business.",
+      logoWeb: logoWeb
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "Graphics Flyers",
+      description: "Creative Design",
+      imgUrl: projImg6,
     },
   ];
 
